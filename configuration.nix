@@ -101,8 +101,10 @@ in
     # 1.21; Upgrade?
     go
     gcc
+    nodejs_21
     gnumake
     tokei
+    marksman
 
     #
     # terminal
