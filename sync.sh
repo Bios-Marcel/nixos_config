@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-sudo cp *.nix /etc/nixos/
+cp *.nix /etc/nixos/
+echo "# vim:set ro: -\*- buffer-read-only:t -\*-" | tee -a /etc/nixos/*.nix
+
