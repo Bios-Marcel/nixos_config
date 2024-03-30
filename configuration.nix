@@ -21,7 +21,7 @@ in
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ./hardware-thinkpad-l570.nix
       ./login-manager.nix
     ];
 
