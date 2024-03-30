@@ -78,6 +78,7 @@ in
     discord
     telegram-desktop
     whatsapp-for-linux
+    zoom-us
 
     # basic
     spotify
@@ -117,7 +118,7 @@ in
     jq
     fastfetch
     htop
-    alacritty
+    wezterm
     tmux
     neovim
 
@@ -154,7 +155,6 @@ in
 
   xdg.portal = {
     enable = true;
-    # FIXME What is this
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
@@ -166,7 +166,7 @@ in
     enable = true;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
-        swaylock swayidle dmenu wmenu
+        swaylock-effects swayidle dmenu wmenu
     ];
   };
 
