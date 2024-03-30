@@ -133,6 +133,7 @@ in
     # Desktop environment 
     #
     greetd.tuigreet
+    playerctl
     i3blocks
     # Notifications
     mako
