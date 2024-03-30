@@ -21,7 +21,7 @@ in
 {
   imports =
     [
-      ./hardware-thinkpad-l570.nix
+      ./hardware-config-import.nix
       ./login-manager.nix
     ];
 
@@ -39,7 +39,6 @@ in
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nix_thinkpad";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";

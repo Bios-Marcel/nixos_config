@@ -1,10 +1,41 @@
 # NixOS configuration
 
-This is the NixOS configuration for my Thinkpad.
+My device-agnostic Nix OS configuration.
 
-The plan is to get it to a point where it is multi device and can also run on my
-worklaptop, to migrate away from Fedora.
+**Do not clone directly into `/etc/nixos`.** This is annoying due to having to
+call `sudoedit`.
 
-Files are edited in the repository and then synced into `/etc/nixos` by running
-`sync.sh`.
+## How to apply configuration
+
+1. Edit files in this repository
+2. Sync to `/etc/nixos/` by running `sudo ./sync.sh`
+3. Rebuild via `sudo nixos-rebuild switch`
+
+## Hardware configuration
+
+The hardware configuration is spread across files.
+
+Hierarchy:
+
+* `hardware-configuration.nix`
+  > Contains generic configuration.
+* `hardware-<device-type>.nix`
+  > Contains device specific configuration and imports the generic configuration.
+* `hardware-config-import.nix`
+  > Decides which hardware specific configuration is imported and isn't tracked
+  > by git. This file is then imported by `configuration.nix`.
+
+To add a new machine, check out the repo and create the
+`hardware-config-import-nix` and decide whether you need a new device specific
+configuration or import the generic one.
+
+The file looks like this:
+
+```nix
+{ config, ... }:
+
+{
+  imports = [ ./hardware-thinkpad-l570.nix ];
+}
+```
 
