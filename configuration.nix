@@ -32,6 +32,7 @@ in
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
+  nix.settings.experimental-features = [ "nix-command" ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -84,6 +85,7 @@ in
     spotify
     firefox
     bitwarden
+    bitwarden-cli
     chezmoi
 
     #
