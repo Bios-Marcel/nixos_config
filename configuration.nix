@@ -73,12 +73,13 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    tenacity
+    pavucontrol
+
     # Communication
-    slack
     discord
     telegram-desktop
     whatsapp-for-linux
-    zoom-us
 
     # basic
     spotify
@@ -160,6 +161,8 @@ in
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+  programs.steam.enable = true;
 
   # I use nvim
   programs.nano.enable = false;
