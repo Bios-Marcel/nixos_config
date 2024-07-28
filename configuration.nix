@@ -106,6 +106,8 @@ in
     gnumake
     tokei
     marksman
+    jdk22
+    jetbrains.idea-community-bin
 
     #
     # terminal
