@@ -85,7 +85,6 @@ in
     spotify
     firefox
     bitwarden
-    bitwarden-cli
     chezmoi
 
     #
