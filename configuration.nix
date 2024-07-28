@@ -106,7 +106,6 @@ in
     gnumake
     tokei
     marksman
-    jdk22
     jetbrains.idea-community-bin
 
     #
@@ -155,6 +154,12 @@ in
   services.tlp.enable = true;
 
   programs.ssh.startAgent = true;
+
+  # Use this so we have java_home set automatically:
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk22;
+  };
 
   xdg.portal = {
     enable = true;

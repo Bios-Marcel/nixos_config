@@ -39,3 +39,8 @@ The file looks like this:
 }
 ```
 
+## Issues
+
+* IntelliJ doesn't automatically find the JDK22, the workaround for now is
+  manual installation via IntelliJ, even though this will duplicate the JDK.
+
