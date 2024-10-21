@@ -25,6 +25,14 @@ Hierarchy:
   > Decides which hardware specific configuration is imported and isn't tracked
   > by git. This file is then imported by `configuration.nix`.
 
+Since the concrete hardware configurations most likely use community provided
+defaults, install the given channel:
+
+```sh
+sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
+sudo nix-channel --update
+```
+
 To add a new machine, check out the repo and create the
 `hardware-config-import.nix` and decide whether you need a new device specific
 configuration or import the generic one.
@@ -37,6 +45,19 @@ The file looks like this:
 {
   imports = [ ./hardware-thinkpad-l570.nix ];
 }
+```
+
+For the concrete hardware configuration, you'll also have to specify the
+filesystem. For this, you need the UUID of the drives. You can list the UUIDs
+via `ls /dev/disk/by-uuid`.
+
+Then add the following section:
+
+```nix
+  fileSystems."/" =
+    { device = "/dev/disk/UUID";
+      fsType = "ext4";
+    };
 ```
 
 ## Issues
