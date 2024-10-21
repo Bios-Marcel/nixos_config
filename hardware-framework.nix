@@ -1,7 +1,10 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ 
+    <nixos-hardware/framework/13-inch/12th-gen-intel>
+    ./hardware-configuration.nix
+  ];
 
   networking.hostName = "nixwork";
 
@@ -10,20 +13,6 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-
-    initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" ];
-    initrd.kernelModules = [ "i915" ];
-    kernelModules = [
-      "kvm-intel"
-      "acpi_call"
-    ];
-    extraModulePackages = with config.boot.kernelPackages; [
-      acpi_call
-    ];
-    kernelParams = [
-      "i915.enable_fbc=1"
-      "i915.enable_psr=2"
-    ];
   };
 
   fileSystems."/" =

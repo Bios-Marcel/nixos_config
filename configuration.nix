@@ -92,6 +92,7 @@ in
     #
     # programming
     #
+    cmake
     openssh
     git
     go
