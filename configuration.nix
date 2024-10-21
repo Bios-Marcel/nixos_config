@@ -34,10 +34,6 @@ in
   };
   nix.settings.experimental-features = [ "nix-command" ];
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.useOSProber = false;
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";

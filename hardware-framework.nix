@@ -8,8 +8,8 @@
   # Optimisations here have been thrown together from the nixos optimisations
   # repository.
   boot = {
-    # nodev for EFI only
-    loader.grub.device = "nodev";
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
 
     initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" ];
     initrd.kernelModules = [ "i915" ];
@@ -27,8 +27,8 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9c51e741-e2c5-4429-9650-7fbb1fa5b8d7";
+    { device = "/dev/disk/by-uuid/ab3e3a17-d440-4d52-9630-a84ed5477c33";
       fsType = "ext4";
     };
 }
-
+ 
