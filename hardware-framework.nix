@@ -3,14 +3,13 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  networking.hostName = "nix_thinkpad";
-
-  console.keyMap = "de";
+  networking.hostName = "nixwork";
 
   # Optimisations here have been thrown together from the nixos optimisations
   # repository.
   boot = {
-    loader.grub.device = "/dev/sda";
+    # nodev for EFI only
+    loader.grub.device = "nodev";
 
     initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" ];
     initrd.kernelModules = [ "i915" ];
@@ -28,11 +27,8 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8dbdb726-f0d0-4ba8-843b-bba3343bb5e9";
+    { device = "/dev/disk/by-uuid/9c51e741-e2c5-4429-9650-7fbb1fa5b8d7";
       fsType = "ext4";
     };
-
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/97ddbf27-9491-49c9-aac5-f20bc765e1d2"; }
-    ];
 }
+

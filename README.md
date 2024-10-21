@@ -26,7 +26,7 @@ Hierarchy:
   > by git. This file is then imported by `configuration.nix`.
 
 To add a new machine, check out the repo and create the
-`hardware-config-import-nix` and decide whether you need a new device specific
+`hardware-config-import.nix` and decide whether you need a new device specific
 configuration or import the generic one.
 
 The file looks like this:

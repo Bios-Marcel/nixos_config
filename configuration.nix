@@ -36,8 +36,7 @@ in
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.useOSProber = false;
 
   networking.networkmanager.enable = true;
 
@@ -56,7 +55,6 @@ in
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-  console.keyMap = "de";
 
   users.users.marcel = {
     isNormalUser = true;
