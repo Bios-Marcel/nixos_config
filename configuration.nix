@@ -153,7 +153,7 @@ in
   # Use this so we have java_home set automatically:
   programs.java = {
     enable = true;
-    package = pkgs.jdk22;
+    package = pkgs.jdk23;
   };
 
   xdg.portal = {
@@ -207,5 +207,5 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }

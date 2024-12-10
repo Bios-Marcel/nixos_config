@@ -5,6 +5,16 @@ My device-agnostic Nix OS configuration.
 **Do not clone directly into `/etc/nixos`.** This is annoying due to having to
 call `sudoedit`.
 
+## Install channel
+
+```sh
+nix-channel --add nixos https://nixos.org/channels/nixos-24.11 nixos
+sudo nix-channel --add nixos https://nixos.org/channels/nixos-24.11 nixos
+sudo nix-channel --update
+```
+
+On upgrades, just run the same with whatever channels is mentioned in the main config file.
+
 ## How to apply configuration
 
 1. Edit files in this repository
