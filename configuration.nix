@@ -102,6 +102,7 @@ in
     tokei
     marksman
     jetbrains.idea-community-bin
+    inkscape
 
     #
     # terminal
