@@ -103,6 +103,7 @@ in
     tokei
     marksman
     jetbrains.idea-community-bin
+    flyctl
     inkscape
 
     #
