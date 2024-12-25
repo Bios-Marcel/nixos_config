@@ -8,7 +8,7 @@
 
   # Currently I only have intel devices, so this will be generic for now.
   environment.variables = {
-    VDPAU_DRIVER = lib.mkIf config.hardware.opengl.enable (lib.mkDefault "va_gl");
+    VDPAU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
   };
   hardware.opentabletdriver.enable = true;
   hardware.graphics.extraPackages = with pkgs; [
