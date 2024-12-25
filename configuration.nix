@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   dbus-sway-environment = pkgs.writeTextFile {
@@ -55,10 +55,11 @@ in
   users.users.marcel = {
     isNormalUser = true;
     description = "marcel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
   };
 
   nixpkgs.config.allowUnfree = true;
+  virtualisation.docker.enable = true;
 
   environment.sessionVariables = rec {
     EDITOR = "nvim";
@@ -190,6 +191,11 @@ in
     alsa.enable = true;
     pulse.enable = true;
   };
+
+  # FIXME This does not work yet ... not sure why.
+  # Prevent docker from booting initially, as we don't really need it by
+  # default. However, being able to start it on demand is still required.
+  systemd.services.docker.wantedBy = lib.mkForce [];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
