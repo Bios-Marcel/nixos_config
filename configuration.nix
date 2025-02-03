@@ -62,6 +62,7 @@ in
   virtualisation.docker.enable = true;
 
   environment.sessionVariables = rec {
+    PATH = "~/go/bin";
     EDITOR = "nvim";
   };
 
