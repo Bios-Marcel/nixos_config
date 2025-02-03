@@ -98,6 +98,8 @@ in
     openssh
     git
     go
+    # Used for plotting graphs, such as for pprof
+    graphviz
     gcc
     nodejs_22
     gnumake
