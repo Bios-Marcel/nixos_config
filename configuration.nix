@@ -150,6 +150,17 @@ in
     })
   ];
 
+  services.tailscale.enable = true;
+
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    user = "marcel";
+    dataDir = "/home/marcel/sync";  # default location for new folders
+    configDir = "/home/marcel/.config/syncthing";  # default location for new folders
+  };
+
   services.dbus.enable = true;
   # intel cpu management stuff
   services.tlp.enable = true;
