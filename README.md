@@ -8,8 +8,8 @@ call `sudoedit`.
 ## Install channel
 
 ```sh
-nix-channel --add nixos https://nixos.org/channels/nixos-24.11 nixos
-sudo nix-channel --add nixos https://nixos.org/channels/nixos-24.11 nixos
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 sudo nix-channel --update
 ```
 

@@ -80,6 +80,7 @@ in
     # basic
     spotify
     firefox
+    chromium
     bitwarden
     chezmoi
 
@@ -97,6 +98,8 @@ in
     cmake
     openssh
     git
+    gdb
+    clang-tools
     go
     # Used for plotting graphs, such as for pprof
     graphviz
@@ -112,6 +115,8 @@ in
     #
     # terminal
     #
+    obs-studio
+    presenterm
     bash-completion
     ripgrep
     fzf
@@ -123,6 +128,7 @@ in
     wezterm
     tmux
     neovim
+    lua-language-server
 
     #
     # wayland specific
