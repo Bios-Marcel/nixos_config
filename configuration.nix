@@ -108,7 +108,6 @@ in
     gnumake
     tokei
     marksman
-    jetbrains.idea-community-bin
     flyctl
     inkscape
 
@@ -151,9 +150,7 @@ in
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = ["IntelOneMono"];
-    })
+    nerd-fonts.intone-mono
   ];
 
   services.tailscale.enable = true;
