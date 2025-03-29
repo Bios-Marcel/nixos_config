@@ -107,9 +107,14 @@ in
     nodejs_22
     gnumake
     tokei
-    marksman
     flyctl
     inkscape
+    #
+    # language servers
+    #
+    lua-language-server
+    marksman
+    gopls
 
     #
     # terminal
@@ -127,7 +132,6 @@ in
     wezterm
     tmux
     neovim
-    lua-language-server
 
     #
     # wayland specific
